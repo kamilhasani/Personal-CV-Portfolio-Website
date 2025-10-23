@@ -187,6 +187,7 @@ function getLanguageColor(language) {
 
 // Initialize dengan error handling
 document.addEventListener('DOMContentLoaded', function() {
+    initializeContactForm();
     console.log('DOM Content Loaded');
     
     // Theme functionality
@@ -303,3 +304,84 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
 });
+
+// =============================================
+// FORMSPREE CONTACT FORM
+// =============================================
+
+function initializeContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (!contactForm) {
+        console.log('Contact form not found');
+        return;
+    }
+
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        // Show loading state
+        submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Mengirim...';
+        submitBtn.disabled = true;
+        
+        // Collect form data
+        const formData = new FormData(this);
+        
+        try {
+            // Send to Formspree
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                // Success
+                showFormAlert('success', '✅ Pesan berhasil dikirim! Saya akan membalas segera.');
+                this.reset();
+            } else {
+                // Error from Formspree
+                throw new Error('Formspree error');
+            }
+            
+        } catch (error) {
+            // Network error or other issues
+            showFormAlert('danger', '❌ Gagal mengirim pesan. Silakan coba lagi atau hubungi langsung ke Khasani7799@gmail.com');
+            console.error('Form error:', error);
+        } finally {
+            // Reset button state
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+}
+
+// Function to show alert messages
+function showFormAlert(type, message) {
+    const alertDiv = document.getElementById('formAlert');
+    
+    const alertClass = type === 'success' ? 'alert-success' : 'alert-danger';
+    
+    alertDiv.innerHTML = `
+        <div class="alert ${alertClass} alert-dismissible fade show mt-3" role="alert">
+            <i class="bi ${type === 'success' ? 'bi-check-circle' : 'bi-exclamation-circle'} me-2"></i>
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    `;
+    
+    // Auto remove after 5 seconds (only for success)
+    if (type === 'success') {
+        setTimeout(() => {
+            const alert = alertDiv.querySelector('.alert');
+            if (alert) {
+                alert.remove();
+            }
+        }, 5000);
+    }
+}
