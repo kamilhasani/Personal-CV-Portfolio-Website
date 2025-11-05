@@ -254,14 +254,12 @@ function scrollToSection(sectionId) {
 function downloadCV() {
     // Create a temporary link for download
     const link = document.createElement('a');
-    link.href = 'cv.pdf'; // Ganti dengan path file CV Anda
-    link.download = 'CV-[Nama-Anda].pdf';
+    window.open('asset/cv.pdf', '_blank');
+    link.download = 'CV-Muhammad Kamil Hasani.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
     
-    // Optional: Show success message
-    alert('CV berhasil diunduh!');
 }
 
 // Contact form handling
@@ -306,82 +304,75 @@ document.querySelectorAll('section').forEach(section => {
 });
 
 // =============================================
-// FORMSPREE CONTACT FORM
+// SIMPLE FORMSPREE - BACK TO WORKING VERSION
 // =============================================
 
 function initializeContactForm() {
     const contactForm = document.getElementById('contactForm');
     
-    if (!contactForm) {
-        console.log('Contact form not found');
-        return;
-    }
+    if (!contactForm) return;
 
-    contactForm.addEventListener('submit', async function(e) {
+    contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         
-        // Show loading state
+        // Show loading
         submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Mengirim...';
         submitBtn.disabled = true;
         
-        // Collect form data
+        // Get form data
         const formData = new FormData(this);
         
-        try {
-            // Send to Formspree
-            const response = await fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-            
+        // Debug: log data yang dikirim
+        console.log('📤 Data yang dikirim ke Formspree:');
+        for (let [key, value] of formData.entries()) {
+            console.log(`${key}: ${value}`);
+        }
+        
+        // Send using simple fetch
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            console.log('✅ Status response:', response.status);
             if (response.ok) {
-                // Success
                 showFormAlert('success', '✅ Pesan berhasil dikirim! Saya akan membalas segera.');
                 this.reset();
             } else {
-                // Error from Formspree
                 throw new Error('Formspree error');
             }
-            
-        } catch (error) {
-            // Network error or other issues
-            showFormAlert('danger', '❌ Gagal mengirim pesan. Silakan coba lagi atau hubungi langsung ke Khasani7799@gmail.com');
-            console.error('Form error:', error);
-        } finally {
-            // Reset button state
+        })
+        .catch(error => {
+            console.error('❌ Error:', error);
+            showFormAlert('danger', '❌ Gagal mengirim pesan. Silakan coba lagi.');
+        })
+        .finally(() => {
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
-        }
+        });
     });
 }
 
-// Function to show alert messages
 function showFormAlert(type, message) {
     const alertDiv = document.getElementById('formAlert');
-    
     const alertClass = type === 'success' ? 'alert-success' : 'alert-danger';
     
     alertDiv.innerHTML = `
-        <div class="alert ${alertClass} alert-dismissible fade show mt-3" role="alert">
-            <i class="bi ${type === 'success' ? 'bi-check-circle' : 'bi-exclamation-circle'} me-2"></i>
+        <div class="alert ${alertClass} alert-dismissible fade show mt-3">
             ${message}
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
     `;
     
-    // Auto remove after 5 seconds (only for success)
     if (type === 'success') {
         setTimeout(() => {
-            const alert = alertDiv.querySelector('.alert');
-            if (alert) {
-                alert.remove();
-            }
+            alertDiv.innerHTML = '';
         }, 5000);
     }
 }
