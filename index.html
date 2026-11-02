@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY CV</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">
+                <i class="bi bi-person-badge me-2"></i>CV Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Pendidikan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Proyek</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontak</a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-light ms-3" id="themeToggle">
+                    <i class="bi bi-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold mb-3">
+                            Halo, Saya <span class="text-primary">Muhammad Kamil Hasani</span>
+                        </h1>
+                        <h2 class="h3 text-muted mb-4">Backend &amp; Web Developer</h2>
+                        <p class="lead mb-4">
+                            Mahasiswa Teknik Informatika yang berfokus pada pengembangan backend, aplikasi web, dan keamanan siber.
+                        </p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary btn-lg me-3" onclick="downloadCV()">
+                                <i class="bi bi-download me-2"></i>Download CV
+                            </button>
+                            <button class="btn btn-outline-primary btn-lg" onclick="scrollToSection('contact')">
+                                <i class="bi bi-envelope me-2"></i>Hubungi Saya
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image text-center">
+                        <div class="image-placeholder rounded-circle bg-light mx-auto d-flex align-items-center justify-content-center">
+                            <img src="asset/profile.jpeg" alt="Muhammad Kamil Hasani" 
+                         class="image-placeholder rounded-circle mx-auto profile-image"
+                         onerror="this.src='https://via.placeholder.com/300?text=Photo+Not+Found'">
+                        </div>
+                        <div class="mt-4">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="stat-number text-primary fw-bold">3</div>
+                                    <div class="stat-label">Proyek Akademik</div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-number text-primary fw-bold">2023</div>
+                                    <div class="stat-label">Mulai Studi</div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-number text-primary fw-bold">4</div>
+                                    <div class="stat-label">Teknologi</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Tentang Saya</h2>
+                    <p class="text-muted">Get to know me better</p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center mb-4">
+                    <img src="asset/profile.jpeg" alt="Profile" class="img-fluid rounded-circle mb-3">
+                    <h3>Muhammad Kamil Hasani</h3>
+                    <p class="text-muted">Backend &amp; Web Developer</p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="about-content">
+                        <p class="mb-4">
+                            Saya adalah mahasiswa Teknik Informatika Universitas Budi Luhur yang memiliki minat besar pada pengembangan backend, aplikasi web, dan keamanan siber. Saya mengembangkan proyek akademik maupun pribadi dengan PHP, Laravel, Java, MySQL, dan JavaScript serta antusias mempelajari teknologi baru melalui kesempatan magang.
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <i class="bi bi-calendar text-primary me-2"></i>
+                                        <strong>Umur:</strong> 22
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-envelope text-primary me-2"></i>
+                                        <strong>Email:</strong> Khasani7799@gmail.com
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-phone text-primary me-2"></i>
+                                        <strong>Telepon:</strong> +62 814-1038-1593
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <i class="bi bi-geo-alt text-primary me-2"></i>
+                                        <strong>Lokasi:</strong> Jakarta, Indonesia
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-briefcase text-primary me-2"></i>
+                                        <strong>Status:</strong> Terbuka untuk Magang
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-translate text-primary me-2"></i>
+                                        <strong>Bahasa:</strong> Indonesia, English
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Pendidikan Section -->
+<section id="experience" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+                <h2 class="section-title">Pendidikan</h2>
+                <p class="text-muted">Latar belakang akademik</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto mb-4">
+                <div class="card h-100 experience-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h5 class="card-title">Teknik Informatika</h5>
+                            <span class="badge bg-primary">2023 - Sekarang</span>
+                        </div>
+                        <h6 class="card-subtitle mb-2 text-muted">Universitas Budi Luhur</h6>
+                        <p class="card-text">
+                            Mahasiswa S1 Teknik Informatika dengan minat pada pengembangan backend, aplikasi web, dan keamanan siber.
+                        </p>
+                    <!--    <ul class="list-unstyled">
+                            <li><i class="bi bi-trophy text-warning me-2"></i>Best Final Project Award</li>
+                            <li><i class="bi bi-people text-warning me-2"></i>Ketua UKM Programming</li>
+                            <li><i class="bi bi-code-slash text-warning me-2"></i>3x Hackathon Winner</li>
+                        </ul> -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+    <!-- Academic Projects Section -->
+    <section id="projects" class="py-5 academic-projects">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Proyek Akademik</h2>
+                    <p class="text-muted">Beberapa proyek yang saya kembangkan selama studi</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <article class="card project-card h-100">
+                        <div class="card-body p-4">
+                            <div class="project-icon"><i class="bi bi-newspaper"></i></div>
+                            <h5 class="card-title">Portal Berita</h5>
+                            <p class="card-text">Aplikasi web berbasis Laravel dengan arsitektur MVC, Blade Template, Eloquent ORM, Laravel Routing, dan Role-Based Access Control.</p>
+                            <div class="project-tags"><span>Laravel</span><span>PHP</span><span>MySQL</span><span>Bootstrap</span></div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4">
+                    <article class="card project-card h-100">
+                        <div class="card-body p-4">
+                            <div class="project-icon"><i class="bi bi-shield-lock"></i></div>
+                            <h5 class="card-title">Sistem Enkripsi File AES-128</h5>
+                            <p class="card-text">Aplikasi pengamanan dokumen sekolah dengan enkripsi otomatis saat upload, autentikasi login, dan manajemen arsip.</p>
+                            <div class="project-tags"><span>PHP</span><span>MySQL</span><span>Bootstrap</span></div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4">
+                    <article class="card project-card h-100">
+                        <div class="card-body p-4">
+                            <div class="project-icon"><i class="bi bi-cpu"></i></div>
+                            <h5 class="card-title">Klasifikasi Motif Batik</h5>
+                            <p class="card-text">Model CNN untuk klasifikasi citra batik, mencakup preprocessing dataset, pelatihan model, dan evaluasi data validasi.</p>
+                            <div class="project-tags"><span>Python</span><span>TensorFlow</span><span>CNN</span></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">Skills & Teknologi</h2>
+                    <p class="text-muted">Kemampuan teknis dan tools yang dikuasai</p>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Technical Skills -->
+                <div class="col-lg-6 mb-4">
+                    <h4 class="mb-4">Technical Skills</h4>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>PHP &amp; Laravel</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Java</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>JavaScript</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>Python</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span>HTML, CSS &amp; Bootstrap</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professional Skills -->
+                <div class="col-lg-6 mb-4">
+                    <h4 class="mb-4">Professional Skills</h4>
+                    <div class="row text-center">
+                        <div class="col-6 mb-4">
+                            <div class="professional-skill">
+                                <i class="bi bi-lightbulb display-4 text-primary mb-3"></i>
+                                <h6>Problem Solving</h6>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="professional-skill">
+                                <i class="bi bi-people display-4 text-primary mb-3"></i>
+                                <h6>Teamwork</h6>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="professional-skill">
+                                <i class="bi bi-chat-dots display-4 text-primary mb-3"></i>
+                                <h6>Communication</h6>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="professional-skill">
+                                <i class="bi bi-clock display-4 text-primary mb-3"></i>
+                                <h6>Time Management</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Portfolio Section -->
+<section id="portfolio" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+                <h2 class="section-title">Portfolio</h2>
+                <p class="text-muted" id="portfolioSubtitle">Proyek Terbaru dari GitHub</p> <!-- ✅ Updated text -->
+                <div class="github-stats mb-4">
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <div class="stat-box text-center">
+                                <i class="bi bi-github display-6 text-primary"></i>
+                                <div id="repoCount" class="h4 mb-0">--</div>
+                                <small>Total Repos</small>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-outline-secondary btn-sm" onclick="refreshGitHubData()" id="refreshBtn">
+                                <i class="bi bi-arrow-clockwise"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Loading State -->
+        <div id="portfolioLoading" class="text-center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2">Memuat proyek terbaru dari GitHub...</p> <!-- ✅ Updated text -->
+        </div>
+
+        <!-- Portfolio Grid - 6 repos = 2 rows of 3 -->
+        <div id="portfolioGrid" class="row" style="display: none;">
+            <!-- GitHub repos akan diisi oleh JavaScript -->
+        </div>
+
+        <!-- Error State -->
+        <div id="portfolioError" class="text-center" style="display: none;">
+            <div class="alert alert-warning">
+                <i class="bi bi-exclamation-triangle me-2"></i>
+                <span id="errorMessage">Gagal memuat data GitHub</span>
+            </div>
+            <button class="btn btn-primary mt-2" onclick="loadGitHubRepos()">
+                <i class="bi bi-arrow-clockwise me-2"></i>Coba Lagi
+            </button>
+            <div class="mt-2">
+                <small class="text-muted">Menampilkan repository terbaru</small> <!-- ✅ Updated text -->
+            </div>
+        </div>
+
+        <!-- GitHub Profile Link -->
+        <div class="text-center mt-5">
+            <a href="#" id="githubProfileLink" 
+               class="btn btn-outline-primary" target="_blank" style="display: none;">
+                <i class="bi bi-github me-2"></i>Lihat Semua Proyek di GitHub
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+                <h2 class="section-title">Hubungi Saya</h2>
+                <p class="text-muted">Mari berkolaborasi dalam proyek Anda!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <!-- FORM YANG SUDAH DIPERBAIKI -->
+                <form id="contactForm" action="https://formspree.io/f/xrbywkqb" method="POST">
+                    <!-- Hidden fields untuk konfigurasi Formspree -->
+                    <input type="hidden" name="_subject" value="Pesan baru dari portfolio Muhammad Kamil Hasani">
+                    <input type="hidden" name="_language" value="id">
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="name" class="form-label">Nama Lengkap *</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="email@example.com" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Pesan *</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                        <i class="bi bi-send me-2"></i>Kirim Pesan
+                    </button>
+                    
+                    <div class="mt-2 text-center">
+                        <small class="text-muted">* Field wajib diisi</small>
+                    </div>
+                </form>
+                
+                <!-- Alert Area -->
+                <div id="formAlert" class="mt-3"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 Muhammad Kamil Hasani. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/kamil-hasani-335217196/" target="_blank" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/kamilhasani" target="_blank" class="text-white me-3"><i class="bi bi-github"></i></a>
+                        <a href="https://www.instagram.com/mllsn._/" target="_blank" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="https://wa.me/6281410381593" target="_blank" class="text-white"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
